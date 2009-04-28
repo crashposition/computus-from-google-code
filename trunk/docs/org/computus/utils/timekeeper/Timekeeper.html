@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../print.css" type="text/css" media="print">
+<meta content="Timekeeper,org.computus.utils.timekeeper.Timekeeper,isTicking,tickDuration,tickFrequency,value,destroy,setRealTimeTick,setRealTimeValue,startTicking,stopTicking" name="keywords">
+<title>org.computus.utils.timekeeper.Timekeeper</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Timekeeper - The Computus Engine API Documentation';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">The Computus Engine API</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../all-classes.html')" href="../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../index-list.html')" href="../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../index.html?org/computus/utils/timekeeper/Timekeeper.html&amp;org/computus/utils/timekeeper/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Timekeeper</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Timekeeper"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">org.computus.utils.timekeeper</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Timekeeper</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Timekeeper <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../images/inherit-arrow.gif"> flash.events.EventDispatcher</td>
+</tr>
+</table>
+<p></p>
+  Accurate Timekeeper in AS3.
+  A solution to the problem of isochronism in the Flash Player.
+  
+  <p>PROBLEM<br/>
+  Both 'onEnterFrame' and 'Timer' events have variable periodicity and cannot be relied upon to keep reliable time.</p>
+  
+  <p>SOLUTION<br/>
+  The timekeeper works by keeping a very fast internal regulator to update a slower user clock.
+  Periodic accuracy is achieved by referencing the system clock and maintaining an accumulator.</p>
+  
+  <p>FEATURES
+  <ul><li>Stop and start the timekeeper</li>
+  <li>Get and set the time (in milliseconds)</li>
+  <li>Get and set the tickFrequency. Default = every 1 second</li>
+  <li>Get and set the tickDuration. Default = 1 second</li></ul><p>
+  
+  <p>LIMITATIONS
+  <ul><li>tickDuration values smaller than one second will work but are not recommended.</li>
+  <li>For capacity reasons the datatype for both 'time' and 'tickDuration' is Number.</li>
+  <li>For speed reasons the datatype for 'time' is Number, rather than a Date.</li>
+  <li>Conversion to Date is really simple: var d = new Date(time)</li></ul></p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../timekeeper/TimekeeperEvent.html" target="">org.computus.utils.timekeeper.TimekeeperEvent</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#isTicking">isTicking</a> : Boolean<div class="summaryTableDescription">[read-only] 
+   A Boolean indicating if the Timekeeper is ticking or not.</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#tickDuration">tickDuration</a> : Number<div class="summaryTableDescription">
+   The length of time in milliseconds the timekeeper is incremented after each tick.</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#tickFrequency">tickFrequency</a> : int<div class="summaryTableDescription">
+   The length of time in milliseconds between ticks of the timekeeper.</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#value">value</a> : Number<div class="summaryTableDescription">
+   The current time value of the Timekeeper measured in milliseconds since the standard Unix epoch 1.1.1970.</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Timekeeper()">Timekeeper</a>()</div>
+<div class="summaryTableDescription">
+   Creates a new instance of the Timekeeper() class.</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#destroy()">destroy</a>():void</div>
+<div class="summaryTableDescription">
+   Removes all listeners and prepares the class for disposal.</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setRealTimeTick()">setRealTimeTick</a>():void</div>
+<div class="summaryTableDescription">
+   A convenience function to set the tick frequency and duration of the timekeeper to "real time", e.g.</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#setRealTimeValue()">setRealTimeValue</a>():void</div>
+<div class="summaryTableDescription">
+   A convenience function to set the value of the timekeeper to the current "real time".</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#startTicking()">startTicking</a>():void</div>
+<div class="summaryTableDescription">
+   Starts the Timekeeper ticking.</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#stopTicking()">stopTicking</a>():void</div>
+<div class="summaryTableDescription">
+   Stops the Timekeeper from ticking.</div>
+</td><td class="summaryTableOwnerCol">Timekeeper</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="isTicking"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">isTicking</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>isTicking:Boolean</code>&nbsp;&nbsp;[read-only]<p> 
+   A Boolean indicating if the Timekeeper is ticking or not.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isTicking():Boolean</code>
+<br>
+</div>
+<a name="tickDuration"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tickDuration</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>tickDuration:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The length of time in milliseconds the timekeeper is incremented after each tick. 
+   Negative values will make the timekeeper tick backwards
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get tickDuration():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set tickDuration(value:Number):void</code>
+<br>
+</div>
+<a name="tickFrequency"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">tickFrequency</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>tickFrequency:int</code>&nbsp;&nbsp;[read-write]<p>
+   The length of time in milliseconds between ticks of the timekeeper. 
+   1000 milliseconds (one second) is recommended and values below 100 milliseconds are prone to isochronism.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get tickFrequency():int</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set tickFrequency(value:int):void</code>
+<br>
+</div>
+<a name="value"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">value</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>value:Number</code>&nbsp;&nbsp;[read-write]<p>
+   The current time value of the Timekeeper measured in milliseconds since the standard Unix epoch 1.1.1970.
+   </p><span class="label">Implementation</span>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function get value():Number</code>
+<br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;public function set value(value:Number):void</code>
+<br>
+</div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Timekeeper()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Timekeeper</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Timekeeper()</code><p>
+   Creates a new instance of the Timekeeper() class.
+   </p></div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="destroy()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">destroy</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function destroy():void</code><p>
+   Removes all listeners and prepares the class for disposal.
+   </p></div>
+<a name="setRealTimeTick()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setRealTimeTick</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setRealTimeTick():void</code><p>
+   A convenience function to set the tick frequency and duration of the timekeeper to "real time", e.g. one second per second.
+   </p></div>
+<a name="setRealTimeValue()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">setRealTimeValue</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function setRealTimeValue():void</code><p>
+   A convenience function to set the value of the timekeeper to the current "real time".
+   </p></div>
+<a name="startTicking()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">startTicking</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function startTicking():void</code><p>
+   Starts the Timekeeper ticking.
+   </p></div>
+<a name="stopTicking()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">stopTicking</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function stopTicking():void</code><p>
+   Stops the Timekeeper from ticking.
+   </p></div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">MMIX | John Dalziel  | The Computus Engine  |  www.computus.org  |  All source code licenced under the MIT Licence</center>
+</div>
+</body>
+</html>
+<!--MMIX | John Dalziel  | The Computus Engine  |  www.computus.org  |  All source code licenced under the MIT Licence-->
